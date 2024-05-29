@@ -86,11 +86,12 @@ th, td {
 
 .delete-all {
 background-color: #1b68cc;
-border-radius: 20px;
+border-radius: 5px;
+border: none;
 color: #fff;
-font-weight: bold;
-height: 30px;
+font-size: 16px;
 cursor: pointer;
+padding: 10px;
 }
 
 .delete-all:hover {

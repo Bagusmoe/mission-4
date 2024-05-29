@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let tasks = [];
 
+    // Initialize flatpickr for the due date input
     flatpickr(dueDateInput, {
         dateFormat: "d/m/Y",
         minDate: "today"
@@ -17,7 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateDateTime = () => {
         const now = new Date();
-        dateTimeElement.textContent = `Waktu dan Tanggal: ${now.toLocaleString()}`;
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+        const year = now.getFullYear();
+        const formattedDate = `${day}/${month}/${year}`;
+        dateTimeElement.textContent = `Waktu dan Tanggal: ${formattedDate} ${now.toLocaleTimeString()}`;
     };
 
     const renderTasks = () => {
